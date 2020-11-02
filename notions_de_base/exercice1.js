@@ -20,3 +20,4 @@ const containIntegersOnly = (array) => {
     })
     return isInteger;
 }
+module.exports = {getHigherNumber};
