@@ -19,3 +19,5 @@ const isAnArray = (parameter) => {
      })
      return isInteger;
  }
+
+module.exports = getSmallerNumber 

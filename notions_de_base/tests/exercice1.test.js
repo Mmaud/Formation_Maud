@@ -1,4 +1,4 @@
-const {getHigherNumber} = require('../notions_de_base/exercice1');
+const {getHigherNumber} = require('../exercice1');
 
 
 describe('test getHigherNumber function', () => {
