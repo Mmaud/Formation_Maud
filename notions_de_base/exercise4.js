@@ -10,6 +10,7 @@ const itemHasNopriceOrQuantity = (cards) => {
     let hasNoPriceOrQuantity = false;
     cards.forEach(card => {
         if (card.item.price === null || isNaN(card.item.price) || card.quantity === null || isNaN(card.quantity)) hasNoPriceOrQuantity = true;
+        return; 
     });
     return hasNoPriceOrQuantity;
 }

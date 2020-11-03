@@ -20,7 +20,7 @@ describe('testing finalCardsPrice error statements', () => {
     })
     test('throw error when there is no quantity', () => {
         let cardsWithoutQuantity = [{ quantity: 8, item: { name: 'chaise', price: 10, } },
-        { quantity: "toto", item: { name: 'table', price: null } }]
+        { quantity: "toto", item: { name: 'table', price: 8 } }]
         expect(() => finalCardsPrice(cardsWithoutQuantity)).toThrow('some item(s) have no price or quantity  : invalid cards');
     })
 })
