@@ -1,9 +1,6 @@
-const getObjectList = (card) => {
-    let cardListItemName = [];
-    if (isEmpty(card)) throw 'Your paramater is empty, it must contain a caddie';
-    card.forEach(element => {
-        cardListItemName.push(element.item.name);   
-    });
+const getObjectList = (cards) => {
+    if (isEmpty(cards)) throw 'Your paramater is empty, it must contain a card';
+    const cardListItemName = cards.map(card => card.item.name);
     return cardListItemName;
 }
 
@@ -11,4 +8,4 @@ const isEmpty = (array) => {
     return array.length===0;
 }
 
-module.exports = {getObjectList}
+module.exports = getObjectList;
