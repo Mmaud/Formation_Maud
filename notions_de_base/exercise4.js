@@ -2,7 +2,7 @@ const finalCardsPrice = (cards) => {
     if (isEmpty(cards)) throw 'Your paramater is empty, it must contain a card';
     if (itemHasNopriceOrQuantity(cards)) throw 'some item(s) have no price or quantity  : invalid cards';
     let finalPrice = 0;
-    cards.map(card => finalPrice += (card.quantity * card.item.price));
+    cards.forEach(card => finalPrice += (card.quantity * card.item.price));
     return finalPrice;
 }
 
