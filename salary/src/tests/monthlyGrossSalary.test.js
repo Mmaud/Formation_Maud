@@ -8,9 +8,9 @@ describe(('getMonthlyGrossSalary must return the monthly gross salary with annua
 
 describe(('getMonthlyGrossSalary error statements'), () => {
     test(('throw an error when parameter is empty'), () => {
-        expect(() => getMonthlyGrossSalary()).toThrow('Your parameter has to be a number');
+        expect(() => getMonthlyGrossSalary()).toThrow(new Error('Your parameter has to be a number'));
     })
     test(('throw an error when parameter is not a number'), () => {
-        expect(() => getMonthlyGrossSalary('toto')).toThrow('Your parameter has to be a number');
+        expect(() => getMonthlyGrossSalary('toto')).toThrow(new Error('Your parameter has to be a number'));
     })
 })

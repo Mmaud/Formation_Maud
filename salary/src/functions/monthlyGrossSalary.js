@@ -1,5 +1,5 @@
 const getMonthlyGrossSalary = (annualGrossSalary) => {
-    if(isInvalid(annualGrossSalary)) throw 'Your parameter has to be a number';
+    if(isInvalid(annualGrossSalary)) throw new Error ('Your parameter has to be a number');
     return annualGrossSalary/12;
 }
 
