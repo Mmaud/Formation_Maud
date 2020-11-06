@@ -1,11 +1,9 @@
 import { InvalidArgumentError } from "./InvalidArgumentError";
-import getMonthlyGrossSalary from "./monthlyGrossSalary";
 
 const getMonthlyNetSalary = (annualGrossSalary) => {
     if(isEmpty(annualGrossSalary)) throw new InvalidArgumentError('Empty parameter')
     if(isInvalid(annualGrossSalary)) throw new InvalidArgumentError('Invalid parameter');
-    let monthlyGrossSalary = getMonthlyGrossSalary(annualGrossSalary);
-    return monthlyGrossSalary - (20/100*monthlyGrossSalary);
+    return decimals((annualGrossSalary/12) - (20/100*annualGrossSalary/12));
 }
 
 const isInvalid = (parameter) => {
@@ -15,5 +13,10 @@ const isInvalid = (parameter) => {
 const isEmpty = (parameter) => {
     return (parameter===undefined || parameter.length===0);
 }
+
+function decimals(number) {
+    if (!Number.isInteger(number)) return Number(Number.parseFloat(number).toFixed(2));
+    else return number;
+  }
 
 export default getMonthlyNetSalary;
