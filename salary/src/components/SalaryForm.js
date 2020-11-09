@@ -1,5 +1,4 @@
-import getMonthlyGrossSalary from '../functions/monthlyGrossSalary';
-import getMonthlyNetSalary from '../functions/monthlyNetSalary';
+import {getMonthlyGrossSalary, getMonthlyNetSalary} from '../functions/getSalaries';
 import React, { useState } from 'react';
 import ErrorComponent from './ErrorComponent';
 import SalariesResult from './SalariesResult';
