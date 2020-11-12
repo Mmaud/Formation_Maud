@@ -1,5 +1,17 @@
 import { InvalidArgumentError } from "./InvalidArgumentError";
 
+const getAnnualGrossSalaryByMonthlyGrossSalary = (monthlyGrossSalary) => {
+    if(isEmpty(monthlyGrossSalary)) throw new InvalidArgumentError("Empty parameter");
+    if(isInvalid(monthlyGrossSalary)) throw new InvalidArgumentError("Invalid parameter");
+    return decimals(monthlyGrossSalary*12);
+}
+
+const getAnnualGrossSalaryByMonthlyNetSalary = (monthlyNetSalary) => {
+    if(isEmpty(monthlyNetSalary)) throw new InvalidArgumentError("Empty parameter");
+    if(isInvalid(monthlyNetSalary)) throw new InvalidArgumentError("Invalid parameter");
+    return decimals(monthlyNetSalary*100/80*12);
+}
+
 const getMonthlyGrossSalary = (annualGrossSalary) => {
     if (isEmpty(annualGrossSalary)) throw new InvalidArgumentError("Empty parameter"); 
     if(isInvalid(annualGrossSalary)) throw new InvalidArgumentError("Invalid parameter");
@@ -25,4 +37,4 @@ function decimals(number) {
     return number;
 }
 
-export {getMonthlyGrossSalary, getMonthlyNetSalary};
+export {getAnnualGrossSalaryByMonthlyGrossSalary, getAnnualGrossSalaryByMonthlyNetSalary, getMonthlyGrossSalary, getMonthlyNetSalary};
